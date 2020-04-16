@@ -1,5 +1,7 @@
 import React from "react";
-import Head from "next/head";
+import { DefaultSeo } from "next-seo";
+
+import SEO from "../next-seo.config";
 
 import "../styles/minima.css";
 import "../styles/syntax.css";
@@ -7,9 +9,7 @@ import "../styles/syntax.css";
 export default function App({ Component, pageProps }) {
   return (
     <>
-      <Head>
-        <title>Lourd</title>
-      </Head>
+      <DefaultSeo {...SEO} />
       <Component {...pageProps} />
     </>
   );
