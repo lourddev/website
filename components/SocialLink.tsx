@@ -1,4 +1,3 @@
-import react from "react";
 import styled from "@emotion/styled";
 
 type IconProps = {
@@ -7,7 +6,7 @@ type IconProps = {
 
 type SocialLinkProps = {
   link: string;
-  icon: "discord" | "twitter";
+  icon: "discord" | "twitter" | "globe";
 };
 
 const Icon = styled.div<IconProps>`

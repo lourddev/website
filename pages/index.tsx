@@ -93,6 +93,7 @@ const Home = () => (
       <Links>
         <SocialLink icon="discord" link="https://invite.gg/lourd" />
         <SocialLink icon="twitter" link="https://twitter.com/lourddev" />
+        <SocialLink icon="globe" link="https://status.lourd.dev" />
       </Links>
     </Content>
   </Wrapper>
