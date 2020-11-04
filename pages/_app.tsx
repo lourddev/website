@@ -1,18 +1,25 @@
 import { useEffect } from "react";
 import { DefaultSeo } from "next-seo";
 import { useRouter } from "next/router";
+import type { AppProps } from "next/app";
+
 import { initGA, logPageView } from "../utils/analytics";
+import { initCrisp } from "../utils/crisp";
 import SEO from "../next-seo.config";
 
 import "../styles/minima.css";
 import "../styles/syntax.css";
 
-const App = ({ Component, pageProps }) => {
+const App = ({ Component, pageProps }: AppProps) => {
   const { pathname } = useRouter();
   useEffect(() => {
-    if (!window.GA_INITIALIZED) {
+    if (process.env.NODE_ENV == "production") {
+      initCrisp();
+    }
+
+    if (!(window as any).GA_INITIALIZED) {
       initGA();
-      window.GA_INITIALIZED = true;
+      (window as any).GA_INITIALIZED = true;
     }
     logPageView(pathname);
   }, []);

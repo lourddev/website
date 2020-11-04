@@ -4,7 +4,7 @@ export const initGA = () => {
   ReactGA.initialize(process.env.NEXT_PUBLIC_GA_TRACKING_ID || "");
 };
 
-export const logPageView = () => {
-  ReactGA.set({ page: window.location.pathname });
-  ReactGA.pageview(window.location.pathname);
+export const logPageView = (pathname: string) => {
+  ReactGA.set({ page: pathname });
+  ReactGA.pageview(pathname);
 };
