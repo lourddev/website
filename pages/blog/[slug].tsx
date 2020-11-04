@@ -54,7 +54,10 @@ export default function Post(props: PostProps) {
       <div className="wrapper">
         <article className="post h-entry">
           <header className="post-header">
-            <NextSeo title={title} />
+            <NextSeo
+              title={title}
+              openGraph={{ url: `${ROOT_URL}/blog/${slug}` }}
+            />
             <ArticleJsonLd
               url={`${ROOT_URL}/blog/${slug}`}
               title={title}

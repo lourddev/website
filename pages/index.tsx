@@ -3,9 +3,10 @@ import Head from "next/head";
 import styled from "@emotion/styled";
 import { space, width } from "styled-system";
 
-import { SITE_NAME } from "../next-seo.config";
+import { SITE_NAME, SITE_DESCRIPTION, ROOT_URL } from "../next-seo.config";
 import Logo from "../components/Logo";
 import SocialLink from "../components/SocialLink";
+import { NextSeo } from "next-seo";
 
 const Wrapper = styled.div`
   display: flex;
@@ -81,11 +82,12 @@ const Home = () => (
         href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.3/csshake-default.min.css"
       />
     </Head>
+    <NextSeo canonical={ROOT_URL} openGraph={{ url: ROOT_URL }} />
     <Content width={[1 / 2, 1]}>
       <Logo height={"300px"} />
       <Title>lourd</Title>
       <Description mb={5} mx={10}>
-        Twitch Extensions &amp; Bots • Streaming &amp; Interactivity tools
+        {SITE_DESCRIPTION}
       </Description>
       <CallToAction className="shake" href="mailto:hello@lourd.dev" mb={5}>
         Work with us!
