@@ -6,13 +6,18 @@ import type { AppProps } from "next/app";
 import { initGA, logPageView } from "../utils/analytics";
 import { initCrisp } from "../utils/crisp";
 import SEO from "../next-seo.config";
+import { onKonami } from "../utils/konami";
 
 import "../styles/minima.css";
 import "../styles/syntax.css";
 
 const App = ({ Component, pageProps }: AppProps) => {
   const { pathname } = useRouter();
+
   useEffect(() => {
+    onKonami(() => {
+      alert("WHAT?");
+    });
     if (process.env.NODE_ENV == "production") {
       initCrisp();
     }
