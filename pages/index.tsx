@@ -6,6 +6,7 @@ import { space, width } from "styled-system";
 import { SITE_NAME, SITE_DESCRIPTION, ROOT_URL } from "../next-seo.config";
 import Logo from "../components/Logo";
 import SocialLink from "../components/SocialLink";
+import PartnerLogo from "../components/PartnerLogo";
 import { NextSeo } from "next-seo";
 
 const Wrapper = styled.div`
@@ -13,6 +14,7 @@ const Wrapper = styled.div`
   justify-content: center;
   background-color: #141213;
   font-family: "Work Sans", sans-serif;
+  overflow: hidden;
 `;
 
 const Content = styled.div`
@@ -66,6 +68,7 @@ const CallToAction = styled.a`
 
 const Links = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 const Home = () => (
@@ -92,11 +95,24 @@ const Home = () => (
       <CallToAction className="shake" href="mailto:hello@lourd.dev" mb={5}>
         Work with us!
       </CallToAction>
-      <Links>
-        <SocialLink icon="discord" link="https://invite.gg/lourd" />
-        <SocialLink icon="twitter" link="https://twitter.com/lourddev" />
-        <SocialLink icon="globe" link="https://status.lourd.dev" />
-      </Links>
+      <Description mb={5} mx={10}>
+        <p>Top Players</p>
+        <Links>
+          <PartnerLogo logo="jk" link="https://www.jkgroupe.com/" />
+          <PartnerLogo logo="vitality" link="https://vitality.gg/" />
+          <PartnerLogo
+            logo="rocketbaguette"
+            link="https://www.rocketbaguette.com/"
+          />
+        </Links>
+      </Description>
+      <Description mb={5} mx={10} px={10}>
+        <Links>
+          <SocialLink icon="discord" link="https://invite.gg/lourd" />
+          <SocialLink icon="twitter" link="https://twitter.com/lourddev" />
+          <SocialLink icon="globe" link="https://status.lourd.dev" />
+        </Links>
+      </Description>
     </Content>
   </Wrapper>
 );
