@@ -10,6 +10,7 @@ import PartnerLogo from "../components/PartnerLogo";
 import { NextSeo } from "next-seo";
 
 const Wrapper = styled.div`
+  ${space}
   display: flex;
   justify-content: center;
   background-color: #141213;
@@ -18,6 +19,7 @@ const Wrapper = styled.div`
 `;
 
 const Content = styled.div`
+  ${space}
   ${width}
   display: flex;
   flex-direction: column;
@@ -72,21 +74,12 @@ const Links = styled.div`
 `;
 
 const Home = () => (
-  <Wrapper>
+  <Wrapper p={10}>
     <Head>
       <title>{SITE_NAME}</title>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500;700&amp;display=swap"
-        rel="stylesheet"
-      />
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.3/csshake-default.min.css"
-      />
     </Head>
     <NextSeo canonical={ROOT_URL} openGraph={{ url: ROOT_URL }} />
-    <Content width={[1 / 2, 1]}>
+    <Content width={[1 / 2, 1]} mt={20}>
       <Logo height={"300px"} />
       <Title>lourd</Title>
       <Description mb={5} mx={10}>

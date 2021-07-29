@@ -18,6 +18,9 @@ const App = ({ Component, pageProps }: AppProps) => {
     onKonami(() => {
       alert("WHAT?");
     });
+  });
+
+  useEffect(() => {
     if (process.env.NODE_ENV == "production") {
       initCrisp();
     }
@@ -27,7 +30,7 @@ const App = ({ Component, pageProps }: AppProps) => {
       (window as any).GA_INITIALIZED = true;
     }
     logPageView(pathname);
-  }, []);
+  }, [pathname]);
 
   return (
     <>
