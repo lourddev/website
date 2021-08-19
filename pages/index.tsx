@@ -6,16 +6,20 @@ import { space, width } from "styled-system";
 import { SITE_NAME, SITE_DESCRIPTION, ROOT_URL } from "../next-seo.config";
 import Logo from "../components/Logo";
 import SocialLink from "../components/SocialLink";
+import PartnerLogo from "../components/PartnerLogo";
 import { NextSeo } from "next-seo";
 
 const Wrapper = styled.div`
+  ${space}
   display: flex;
   justify-content: center;
   background-color: #141213;
   font-family: "Work Sans", sans-serif;
+  overflow: hidden;
 `;
 
 const Content = styled.div`
+  ${space}
   ${width}
   display: flex;
   flex-direction: column;
@@ -66,24 +70,16 @@ const CallToAction = styled.a`
 
 const Links = styled.div`
   display: flex;
+  align-items: center;
 `;
 
 const Home = () => (
-  <Wrapper>
+  <Wrapper p={10}>
     <Head>
       <title>{SITE_NAME}</title>
-      <link
-        href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@500;700&amp;display=swap"
-        rel="stylesheet"
-      />
-      <link
-        rel="stylesheet"
-        type="text/css"
-        href="https://cdnjs.cloudflare.com/ajax/libs/csshake/1.5.3/csshake-default.min.css"
-      />
     </Head>
     <NextSeo canonical={ROOT_URL} openGraph={{ url: ROOT_URL }} />
-    <Content width={[1 / 2, 1]}>
+    <Content width={[1 / 2, 1]} mt={20}>
       <Logo height={"300px"} />
       <Title>lourd</Title>
       <Description mb={5} mx={10}>
@@ -92,11 +88,24 @@ const Home = () => (
       <CallToAction className="shake" href="mailto:hello@lourd.dev" mb={5}>
         Work with us!
       </CallToAction>
-      <Links>
-        <SocialLink icon="discord" link="https://invite.gg/lourd" />
-        <SocialLink icon="twitter" link="https://twitter.com/lourddev" />
-        <SocialLink icon="globe" link="https://status.lourd.dev" />
-      </Links>
+      <Description mb={5} mx={10}>
+        <p>Top Players</p>
+        <Links>
+          <PartnerLogo logo="jk" link="https://www.jkgroupe.com/" />
+          <PartnerLogo logo="vitality" link="https://vitality.gg/" />
+          <PartnerLogo
+            logo="rocketbaguette"
+            link="https://www.rocketbaguette.com/"
+          />
+        </Links>
+      </Description>
+      <Description mb={5} mx={10} px={10}>
+        <Links>
+          <SocialLink icon="discord" link="https://invite.gg/lourd" />
+          <SocialLink icon="twitter" link="https://twitter.com/lourddev" />
+          <SocialLink icon="globe" link="https://status.lourd.dev" />
+        </Links>
+      </Description>
     </Content>
   </Wrapper>
 );

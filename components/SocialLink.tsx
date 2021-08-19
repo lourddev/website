@@ -11,8 +11,8 @@ type SocialLinkProps = {
 
 const Icon = styled.div<IconProps>`
   background-image: url("/svg/${(props) => props.icon}.svg");
-  width: 64px;
-  height: 64px;
+  width: 48px;
+  height: 48px;
 `;
 
 const SocialLink = ({ link, icon }: SocialLinkProps) => {
