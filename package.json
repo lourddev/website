@@ -13,7 +13,7 @@
   "license": "UNLICENSED",
   "homepage": "https://lourd.dev",
   "dependencies": {
-    "@emotion/core": "10.1.0",
+    "@emotion/core": "10.1.1",
     "@emotion/styled": "10.0.27",
     "date-fns": "2.23.0",
     "gray-matter": "4.0.3",
