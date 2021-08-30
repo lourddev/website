@@ -31,7 +31,7 @@
     "@types/highlight.js": "9.12.4",
     "@types/marked": "1.1.0",
     "@types/node": "16.7.1",
-    "@types/react": "16.9.55",
+    "@types/react": "17.0.19",
     "@types/styled-system": "5.1.13",
     "conventional-changelog-gitmoji": "0.2.5",
     "eslint": "7.32.0",
