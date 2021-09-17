@@ -29,7 +29,7 @@
   "devDependencies": {
     "@commitlint/cli": "13.1.0",
     "@types/highlight.js": "9.12.4",
-    "@types/marked": "1.1.0",
+    "@types/marked": "3.0.1",
     "@types/node": "16.7.1",
     "@types/react": "17.0.19",
     "@types/styled-system": "5.1.13",
