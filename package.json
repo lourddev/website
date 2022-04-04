@@ -35,7 +35,7 @@
     "@types/styled-system": "5.1.13",
     "conventional-changelog-gitmoji": "0.2.5",
     "eslint": "7.32.0",
-    "eslint-config-next": "11.1.2",
+    "eslint-config-next": "12.1.4",
     "husky": "7.0.4",
     "jest": "27.5.1",
     "lint-staged": "12.3.5",
