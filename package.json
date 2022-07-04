@@ -34,7 +34,7 @@
     "@types/react": "17.0.39",
     "@types/styled-system": "5.1.13",
     "conventional-changelog-gitmoji": "0.2.5",
-    "eslint": "7.32.0",
+    "eslint": "8.19.0",
     "eslint-config-next": "12.1.6",
     "husky": "7.0.4",
     "jest": "27.5.1",
