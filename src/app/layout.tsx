@@ -2,7 +2,7 @@ import { Work_Sans } from "next/font/google";
 import type { Metadata } from "next";
 import "./globals.css";
 
-const font = Work_Sans();
+const font = Work_Sans({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "Create Next App",
