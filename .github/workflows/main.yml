@@ -2,34 +2,39 @@ name: Build and Deploy
 
 on:
   push:
-    branches: [master]
-
-permissions:
-  contents: write
+    branches: [main]
 
 jobs:
-  build-and-deploy:
-    concurrency: ci-${{ github.ref }} # Recommended if you intend to make multiple deployments in quick succession.
+  build:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    steps:
+      - uses: actions/checkout@v4
+      - name: Install pnpm
+        uses: pnpm/action-setup@v4
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version-file: .nvmrc
+          cache: pnpm
+      - name: Install dependencies
+        run: pnpm install
+      - name: Build
+        run: pnpm run build
+      - name: Upload static files as artifact
+        id: deployment
+        uses: actions/upload-pages-artifact@v3 # or specific "vX.X.X" version tag for this action
+        with:
+          path: out/
+  deploy:
+    needs: build
+    permissions:
+      pages: write
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v3
-        with:
-          fetch-depth: 0
-      - uses: actions/setup-node@v3
-        with:
-          node-version-file: ".nvmrc"
-          cache: yarn
-      - name: Install JS dependencies
-        run: yarn --frozen-lockfile
-      - name: Build
-        run: |
-          yarn next build
-          yarn next export
-        env:
-          NEXT_PUBLIC_GA_TRACKING_ID: ${{ secrets.GA_TRACKING_ID}}
-          NEXT_PUBLIC_CRISP_WEBSITE_ID: ${{ secrets.CRISP_WEBSITE_ID}}
-      - name: Deploy
-        uses: JamesIves/github-pages-deploy-action@v4.3.3
-        with:
-          branch: gh-pages
-          folder: out
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
