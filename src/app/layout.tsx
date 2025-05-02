@@ -4,17 +4,9 @@ import "./globals.css";
 
 const font = Work_Sans({ subsets: ["latin"] });
 
-const SITE_TITLE = "Lourd.dev";
-const SITE_DESCRIPTION =
-  "Twitch Extensions & Bots • Streaming & Interactivity tools";
-
 export const metadata: Metadata = {
-  title: SITE_TITLE,
-  description: SITE_DESCRIPTION,
-  openGraph: {
-    title: SITE_TITLE,
-    description: SITE_DESCRIPTION,
-  },
+  title: "Lourd.dev",
+  description: "Twitch Extensions & Bots • Streaming & Interactivity tools",
 };
 
 export default function RootLayout({
