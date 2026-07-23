@@ -3,6 +3,7 @@
 import { useEffect } from "react";
 import Image from "next/image";
 
+import AnimatedLogo from "@/components/AnimatedLogo";
 import { onKonami } from "@/utils/konami";
 
 export default function Home() {
@@ -14,13 +15,7 @@ export default function Home() {
 
   return (
     <div className="flex flex-col items-center justify-center h-screen text-center gap-4">
-      <Image
-        src="/svg/logo.svg"
-        alt="Lourd logo"
-        width={230}
-        height={230}
-        className="inline"
-      />
+      <AnimatedLogo className="w-[230px] h-[230px]" />
 
       <div className="text-8xl font-bold ">lourd</div>
       <div>Twitch Extensions & Bots • Streaming & Interactivity tools</div>
